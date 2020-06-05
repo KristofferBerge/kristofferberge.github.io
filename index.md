@@ -1,3 +1,9 @@
+---
+layout: default
+title: Kristoffer Møgster Berge
+description: Home
+permalink: /
+---
 # Hello world!
 
 [Link to a post](./test-post)
