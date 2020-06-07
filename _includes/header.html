@@ -1,0 +1,32 @@
+{% if page.uselargeheader %}
+<header class="site-header outer" role="banner"
+  style="background-image: url('{{ page.cover | default: site.data.paths.cover}}'); background-repeat: no-repeat; background-size: cover;">
+  {% else %}
+  <header class="site-header outer" role="banner">
+    {% endif %}
+    
+    {% if page.uselargeheader %}
+      <div class="inner" style="display:block">
+
+      <div class="site-header-content">
+        <h1 class="site-title">{{ site.title }}</h1>
+        <h2 class="site-description">{{ site.description }}</h2>
+      </div>
+      {% else %}
+      <div class="inner" style="display:flex">
+        {% endif %}
+
+        {% unless page.uselargeheader %}
+      <div class="site-nav site-nav-left">
+        <a class="site-nav-logo" href="/"> <strong>{{ site.title }}</strong> </a>
+        {% else %}
+      <div class="site-nav site-nav-large site-nav-left">
+        {% endunless %}
+        <ul class="nav" role="menu">
+          {% for item in site.data.main-menu %}
+          <li><a href="{{item.url}}">{{item.title}}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </header>

@@ -1,0 +1,16 @@
+---
+layout: default
+title: Kristoffer Møgster Berge
+description: Home
+uselargeheader: true
+permalink: /
+---
+<div class="post-feed">
+    {% if site.posts.size == 0 %}
+        <h1>No posts here yet</h1>
+    {% else %}
+        {% for post in site.posts limit:5 %}
+            {% include post-card.html %}
+        {% endfor %}
+    {% endif %}
+</div>
